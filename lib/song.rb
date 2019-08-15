@@ -1,3 +1,4 @@
+require "pry"
 class Song
   @@count = 0
   @@names = []
@@ -12,8 +13,7 @@ class Song
     @@count += 1
   end
   
-  
-  def self.count
+   def self.count
     @@count
   end
   
@@ -26,18 +26,18 @@ class Song
   end
   
   def self.genre_count
-    genre_count = {}
+    genre_counts = {}
     @@genres.each do |genre|
-      if genre_count.include?(genre)
-        genre_count[genre] += 1 
+      if genre_counts.include?(genre)
+        genre_counts[genre] += 1 
       else
-        genre_count[genre] = 1
+        genre_counts[genre] = 1
       end
     end
-    genre_count
+    genre_counts
   end
   
-# code below is just a variation of the code above
+# code below is just the same variation of the code above
   def self.artist_count
     artists_count = {}
     @@artists.each do |songs|
@@ -49,5 +49,5 @@ class Song
     end
     artists_count
   end
-  
+binding.pry
 end
